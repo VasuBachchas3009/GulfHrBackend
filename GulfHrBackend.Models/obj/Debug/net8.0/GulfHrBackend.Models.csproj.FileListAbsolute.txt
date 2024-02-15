@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\bin\Debug\net8.0\GulfHrBackend.Models.deps.json
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\bin\Debug\net8.0\GulfHrBackend.Models.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\bin\Debug\net8.0\GulfHrBackend.Models.pdb
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\bin\Debug\net8.0\GulfHrBackend.Core.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\bin\Debug\net8.0\GulfHrBackend.Core.pdb
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.AssemblyInfo.cs
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.csproj.CopyComplete
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\refint\GulfHrBackend.Models.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.pdb
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\ref\GulfHrBackend.Models.dll

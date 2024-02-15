@@ -1,0 +1,6 @@
+@GulfHrBackend_HostAddress = http://localhost:5041
+
+GET {{GulfHrBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
