@@ -13,3 +13,4 @@ C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\G
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\refint\GulfHrBackend.Models.dll
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.pdb
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\ref\GulfHrBackend.Models.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Models\obj\Debug\net8.0\GulfHrBackend.Models.sourcelink.json

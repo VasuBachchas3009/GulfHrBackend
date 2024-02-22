@@ -31,8 +31,8 @@ namespace GulfHrBackend.Core.Middleware
         {
             context.Response.ContentType = "application/json";
             //context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            CustomExceptionDto<string> customExceptionDto = new CustomExceptionDto<string>();
-            customExceptionDto.RequestId = "123456-1234-1235-4567489798";
+            CustomResponseDto<string> customExceptionDto = new CustomResponseDto<string>();
+            customExceptionDto.RequestId = new Guid();
             if (exception.Message == "Invalid User Input")
             {
                 context.Response.StatusCode = 400;
@@ -48,6 +48,15 @@ namespace GulfHrBackend.Core.Middleware
                 customExceptionDto.Code = 404;
                 customExceptionDto.Status = "Failure";
                 customExceptionDto.Message = exception.Message;
+                customExceptionDto.Errors = "";
+                customExceptionDto.data = "";
+            }
+            else if(exception.Message== "Authentication Error")
+            {
+                context.Response.StatusCode = 401;
+                customExceptionDto.Code = 401;
+                customExceptionDto.Status = "Failure";
+                customExceptionDto.Message = "Unauthorized User";
                 customExceptionDto.Errors = "";
                 customExceptionDto.data = "";
             }

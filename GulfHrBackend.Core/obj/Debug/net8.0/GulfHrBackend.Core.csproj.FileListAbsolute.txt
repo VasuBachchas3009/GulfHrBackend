@@ -10,3 +10,4 @@ C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Core\obj\Debug\net8.0\ref
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Core\obj\Debug\net8.0\GulfHrBackend.Core.pdb
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Core\obj\Debug\net8.0\ref\GulfHrBackend.Core.dll
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Core\obj\Debug\net8.0\GulfHrBackend.Core.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.Core\obj\Debug\net8.0\GulfHrBackend.Core.sourcelink.json

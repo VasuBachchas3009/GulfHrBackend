@@ -17,3 +17,4 @@ C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.BLL\obj\Debug\net8.0\Gulf
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.BLL\obj\Debug\net8.0\refint\GulfHrBackend.BLL.dll
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.BLL\obj\Debug\net8.0\GulfHrBackend.BLL.pdb
 C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.BLL\obj\Debug\net8.0\ref\GulfHrBackend.BLL.dll
+C:\Users\user\source\repos\GulfHrBackend\GulfHrBackend.BLL\obj\Debug\net8.0\GulfHrBackend.BLL.sourcelink.json

@@ -1,4 +1,5 @@
 ﻿using GulfHrBackend.Core.Utility.Enums;
+using GulfHrBackend.DLL.DTO.CreateScheduleDtos;
 using GulfHrBackend.Models;
 using System;
 using System.Collections.Generic;
@@ -20,8 +21,8 @@ namespace GulfHrBackend.DLL.DTO
         public int RepeatOnDate { get; set; }
         public string EndsOn { get; set; }
         public string EndsOnDate { get; set; }
-        public int EndsOnAfter { get; set; }
-        public List<ReportScheduleRecipients> ReportSceduleRecipients { get; set; }
+        public int? EndsOnAfter { get; set; }
+        public List<ResponseRecipientDto> ReportSceduleRecipients { get; set; }
     }
 }
 

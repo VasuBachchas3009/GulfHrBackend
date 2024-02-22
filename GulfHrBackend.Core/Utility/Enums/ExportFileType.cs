@@ -2,7 +2,7 @@
 {
     public enum ExportFileType
     {
-        Xls,
-        Csv
+        XLS,
+        CSV
     }
 }

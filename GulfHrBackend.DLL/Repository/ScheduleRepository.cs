@@ -12,49 +12,67 @@ namespace GulfHrBackend.DLL.Repository
 {
     public class ScheduleRepository : IScheduleRepository
     {
-        private readonly AppDBContext appDBContext;
+        private readonly AppDBContext _appDBContext;
 
         public ScheduleRepository(AppDBContext appDBContext)
         {
-            this.appDBContext = appDBContext;
+            _appDBContext = appDBContext;
+        }
+
+        public async Task AddRecipient(ReportScheduleRecipients recipient)
+        {
+            await _appDBContext.ReportScheduleRecipients.AddAsync(recipient);
+            await _appDBContext.SaveChangesAsync();
+        }
+
+        public async Task<ReportSchedule> AddReportSchedule(ReportSchedule reportSchedule)
+        {
+            await _appDBContext.AddAsync(reportSchedule);
+            await _appDBContext.SaveChangesAsync();
+            return reportSchedule;
+        }
+
+        public async Task<Schedule> AddSchedule(Schedule schedule)
+        {
+            await _appDBContext.Schedules.AddAsync(schedule);
+            await _appDBContext.SaveChangesAsync();
+            return schedule;
         }
 
         public async Task<NotificationSchedule> GetNotificationSchedule(Guid scheduleId)
         {
-            var notificationSchedule = await appDBContext.NotificationSchedules.FirstOrDefaultAsync(x=>x.ScheduleId==scheduleId);
+            var notificationSchedule = await _appDBContext.NotificationSchedules.FirstOrDefaultAsync(x=>x.ScheduleId==scheduleId);
             return notificationSchedule;
         }
 
-        public Task<List<NotificationScheduledOns>> GetNotificationScheduledOns(Guid notificationScheduleId)
+        public async Task<List<NotificationScheduledOns>> GetNotificationScheduledOns(Guid notificationScheduleId)
         {
-            var notificationScheduleOns = appDBContext.NotificationScheduledOns.Where(x => x.NotificationScheduleId == notificationScheduleId).ToListAsync();
+            var notificationScheduleOns = await _appDBContext.NotificationScheduledOns.Where(x => x.NotificationScheduleId == notificationScheduleId).ToListAsync();
             return notificationScheduleOns;
         }
 
         public Task<List<NotificationTimes>> GetNotificationTimes(Guid notificationScheduleId)
         {
-            var notificationTimes = appDBContext.NotificationTimes.Where(x => x.NotificationScheduleId == notificationScheduleId).ToListAsync();
+            var notificationTimes = _appDBContext.NotificationTimes.Where(x => x.NotificationScheduleId == notificationScheduleId).ToListAsync();
             return notificationTimes;
         }
 
         public async Task<ReportSchedule> GetReportSchedule(Guid scheduleId)
         {
-            ReportSchedule reportSchedule = await appDBContext.ReportSchedules.FirstOrDefaultAsync(x=>x.ScheduleId == scheduleId);
+            ReportSchedule reportSchedule = await _appDBContext.ReportSchedules.FirstOrDefaultAsync(x=>x.ScheduleId == scheduleId);
             return reportSchedule;
         }
 
-        public Task<List<ReportScheduleRecipients>> GetReportScheduleRecipients(Guid reportScheduleId)
+        public Task<List<ReportScheduleRecipients>> GetReportScheduleRecipients(Guid scheduleId)
         {
-            var recipients=appDBContext.ReportScheduleRecipients.Where(x=>x.ReportScheduleId == reportScheduleId).ToListAsync();  
+            var recipients=_appDBContext.ReportScheduleRecipients.Where(x=>x.ScheduleId == scheduleId).ToListAsync();  
             return recipients;
         }
 
         public async Task<Schedule> GetSchedule(Guid Id)
         {
 
-            Schedule schedule = await appDBContext.Schedules
-                .Include(schedule=>schedule.ReportSchedule)
-                .Include(schedule => schedule.NotificationSchedule)
+            Schedule? schedule = await _appDBContext.Schedules
                 .FirstOrDefaultAsync(x=>x.ScheduleId==Id);
 
             if (schedule == null)

@@ -121,13 +121,25 @@ namespace GulfHrBackend.DLL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DeletedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("EndsOn")
                         .HasColumnType("int");
 
-                    b.Property<int>("EndsOnAfter")
+                    b.Property<int?>("EndsOnAfter")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndsOnDate")
+                    b.Property<DateTime?>("EndsOnDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ExportFileType")
@@ -135,6 +147,21 @@ namespace GulfHrBackend.DLL.Migrations
 
                     b.Property<DateTime>("FromDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("LastUpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastUpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RepeatOnDate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RepeatOnDays")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ReportFrequency")
                         .HasColumnType("int");
@@ -156,15 +183,35 @@ namespace GulfHrBackend.DLL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ReportScheduleId")
+                    b.Property<Guid>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DeletedBy")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("LastUpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastUpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ScheduleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ReportScheduleId");
 
                     b.ToTable("ReportScheduleRecipients");
                 });
@@ -175,11 +222,35 @@ namespace GulfHrBackend.DLL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DeletedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("EmailTemplateId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("LastUpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastUpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("ModuleId")
                         .HasColumnType("uniqueidentifier");
@@ -188,20 +259,13 @@ namespace GulfHrBackend.DLL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NotificationScheduleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ReportScheduleId")
+                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("ScheduleId");
-
-                    b.HasIndex("NotificationScheduleId");
-
-                    b.HasIndex("ReportScheduleId");
 
                     b.ToTable("Schedules");
                 });
@@ -219,39 +283,6 @@ namespace GulfHrBackend.DLL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("GulfHrBackend.Models.ReportScheduleRecipients", b =>
-                {
-                    b.HasOne("GulfHrBackend.Models.ReportSchedule", null)
-                        .WithMany("ReportScheduleRecipients")
-                        .HasForeignKey("ReportScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GulfHrBackend.Models.Schedule", b =>
-                {
-                    b.HasOne("GulfHrBackend.Models.NotificationSchedule", "NotificationSchedule")
-                        .WithMany()
-                        .HasForeignKey("NotificationScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GulfHrBackend.Models.ReportSchedule", "ReportSchedule")
-                        .WithMany()
-                        .HasForeignKey("ReportScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NotificationSchedule");
-
-                    b.Navigation("ReportSchedule");
-                });
-
-            modelBuilder.Entity("GulfHrBackend.Models.ReportSchedule", b =>
-                {
-                    b.Navigation("ReportScheduleRecipients");
                 });
 #pragma warning restore 612, 618
         }

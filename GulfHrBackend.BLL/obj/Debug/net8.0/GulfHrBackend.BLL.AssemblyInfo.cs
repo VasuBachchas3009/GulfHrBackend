@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GulfHrBackend.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a4dccfc61a6b557e0b9a75488ed9ee508f328b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("GulfHrBackend.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GulfHrBackend.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
